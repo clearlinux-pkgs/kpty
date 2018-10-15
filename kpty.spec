@@ -5,20 +5,20 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kpty
-Version  : 5.50.0
-Release  : 4
-URL      : https://download.kde.org/stable/frameworks/5.50/kpty-5.50.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.50/kpty-5.50.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.50/kpty-5.50.0.tar.xz.sig
+Version  : 5.51.0
+Release  : 5
+URL      : https://download.kde.org/stable/frameworks/5.51/kpty-5.51.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.51/kpty-5.51.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.51/kpty-5.51.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1
-Requires: kpty-lib
-Requires: kpty-license
-Requires: kpty-locales
+Requires: kpty-lib = %{version}-%{release}
+Requires: kpty-license = %{version}-%{release}
+Requires: kpty-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
-BuildRequires : qtbase-dev qtbase-extras mesa-dev
+BuildRequires : qtbase-dev mesa-dev
 
 %description
 # KPty
@@ -31,8 +31,8 @@ communicating with them using a pty.
 %package dev
 Summary: dev components for the kpty package.
 Group: Development
-Requires: kpty-lib
-Provides: kpty-devel
+Requires: kpty-lib = %{version}-%{release}
+Provides: kpty-devel = %{version}-%{release}
 
 %description dev
 dev components for the kpty package.
@@ -41,7 +41,7 @@ dev components for the kpty package.
 %package lib
 Summary: lib components for the kpty package.
 Group: Libraries
-Requires: kpty-license
+Requires: kpty-license = %{version}-%{release}
 
 %description lib
 lib components for the kpty package.
@@ -64,26 +64,26 @@ locales components for the kpty package.
 
 
 %prep
-%setup -q -n kpty-5.50.0
+%setup -q -n kpty-5.51.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536435542
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1539617526
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
-make  %{?_smp_mflags}
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1536435542
+export SOURCE_DATE_EPOCH=1539617526
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/kpty
-cp COPYING %{buildroot}/usr/share/doc/kpty/COPYING
-cp COPYING.LIB %{buildroot}/usr/share/doc/kpty/COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/kpty
+cp COPYING %{buildroot}/usr/share/package-licenses/kpty/COPYING
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/kpty/COPYING.LIB
 pushd clr-build
 %make_install
 popd
@@ -112,12 +112,12 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Pty.so.5
-/usr/lib64/libKF5Pty.so.5.50.0
+/usr/lib64/libKF5Pty.so.5.51.0
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/kpty/COPYING
-/usr/share/doc/kpty/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/kpty/COPYING
+/usr/share/package-licenses/kpty/COPYING.LIB
 
 %files locales -f kpty5.lang
 %defattr(-,root,root,-)
