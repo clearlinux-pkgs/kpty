@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kpty
-Version  : 5.51.0
-Release  : 6
-URL      : https://download.kde.org/stable/frameworks/5.51/kpty-5.51.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.51/kpty-5.51.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.51/kpty-5.51.0.tar.xz.sig
+Version  : 5.52.0
+Release  : 7
+URL      : https://download.kde.org/stable/frameworks/5.52/kpty-5.52.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.52/kpty-5.52.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.52/kpty-5.52.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1
@@ -27,6 +27,14 @@ Interfacing with pseudo terminal devices
 This library provides primitives to interface with pseudo terminal devices
 as well as a KProcess derived class for running child processes and
 communicating with them using a pty.
+
+%package abi
+Summary: abi components for the kpty package.
+Group: Default
+
+%description abi
+abi components for the kpty package.
+
 
 %package dev
 Summary: dev components for the kpty package.
@@ -64,14 +72,14 @@ locales components for the kpty package.
 
 
 %prep
-%setup -q -n kpty-5.51.0
+%setup -q -n kpty-5.52.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1539639960
+export SOURCE_DATE_EPOCH=1541871991
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -79,7 +87,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1539639960
+export SOURCE_DATE_EPOCH=1541871991
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kpty
 cp COPYING %{buildroot}/usr/share/package-licenses/kpty/COPYING
@@ -91,6 +99,10 @@ popd
 
 %files
 %defattr(-,root,root,-)
+
+%files abi
+%defattr(-,root,root,-)
+/usr/share/abi/libKF5Pty.so.5.52.0.abi
 
 %files dev
 %defattr(-,root,root,-)
@@ -112,7 +124,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Pty.so.5
-/usr/lib64/libKF5Pty.so.5.51.0
+/usr/lib64/libKF5Pty.so.5.52.0
 
 %files license
 %defattr(0644,root,root,0755)
