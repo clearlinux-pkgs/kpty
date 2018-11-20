@@ -6,7 +6,7 @@
 #
 Name     : kpty
 Version  : 5.52.0
-Release  : 7
+Release  : 8
 URL      : https://download.kde.org/stable/frameworks/5.52/kpty-5.52.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.52/kpty-5.52.0.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.52/kpty-5.52.0.tar.xz.sig
@@ -27,14 +27,6 @@ Interfacing with pseudo terminal devices
 This library provides primitives to interface with pseudo terminal devices
 as well as a KProcess derived class for running child processes and
 communicating with them using a pty.
-
-%package abi
-Summary: abi components for the kpty package.
-Group: Default
-
-%description abi
-abi components for the kpty package.
-
 
 %package dev
 Summary: dev components for the kpty package.
@@ -79,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541871991
+export SOURCE_DATE_EPOCH=1542744303
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -87,7 +79,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1541871991
+export SOURCE_DATE_EPOCH=1542744303
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kpty
 cp COPYING %{buildroot}/usr/share/package-licenses/kpty/COPYING
@@ -99,10 +91,6 @@ popd
 
 %files
 %defattr(-,root,root,-)
-
-%files abi
-%defattr(-,root,root,-)
-/usr/share/abi/libKF5Pty.so.5.52.0.abi
 
 %files dev
 %defattr(-,root,root,-)
