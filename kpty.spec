@@ -6,7 +6,7 @@
 #
 Name     : kpty
 Version  : 5.53.0
-Release  : 9
+Release  : 10
 URL      : https://download.kde.org/stable/frameworks/5.53/kpty-5.53.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.53/kpty-5.53.0.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.53/kpty-5.53.0.tar.xz.sig
@@ -71,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1544480198
+export SOURCE_DATE_EPOCH=1544542704
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -79,7 +79,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1544480198
+export SOURCE_DATE_EPOCH=1544542704
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kpty
 cp COPYING %{buildroot}/usr/share/package-licenses/kpty/COPYING
