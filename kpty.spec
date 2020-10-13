@@ -6,7 +6,7 @@
 #
 Name     : kpty
 Version  : 5.75.0
-Release  : 32
+Release  : 33
 URL      : https://download.kde.org/stable/frameworks/5.75/kpty-5.75.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.75/kpty-5.75.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.75/kpty-5.75.0.tar.xz.sig
@@ -87,7 +87,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1602617192
+export SOURCE_DATE_EPOCH=1602630269
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -103,7 +103,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1602617192
+export SOURCE_DATE_EPOCH=1602630269
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kpty
 cp %{_builddir}/kpty-5.75.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kpty/e712eadfab0d2357c0f50f599ef35ee0d87534cb
