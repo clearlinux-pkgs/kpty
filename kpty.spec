@@ -5,14 +5,14 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kpty
-Version  : 5.73.0
-Release  : 31
-URL      : https://download.kde.org/stable/frameworks/5.73/kpty-5.73.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.73/kpty-5.73.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.73/kpty-5.73.0.tar.xz.sig
+Version  : 5.75.0
+Release  : 32
+URL      : https://download.kde.org/stable/frameworks/5.75/kpty-5.75.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.75/kpty-5.75.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.75/kpty-5.75.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : GPL-2.0 LGPL-2.1
+License  : GPL-2.0 LGPL-2.0
 Requires: kpty-data = %{version}-%{release}
 Requires: kpty-lib = %{version}-%{release}
 Requires: kpty-license = %{version}-%{release}
@@ -79,15 +79,15 @@ locales components for the kpty package.
 
 
 %prep
-%setup -q -n kpty-5.73.0
-cd %{_builddir}/kpty-5.73.0
+%setup -q -n kpty-5.75.0
+cd %{_builddir}/kpty-5.75.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1597704090
+export SOURCE_DATE_EPOCH=1602617192
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -103,11 +103,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1597704090
+export SOURCE_DATE_EPOCH=1602617192
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kpty
-cp %{_builddir}/kpty-5.73.0/COPYING %{buildroot}/usr/share/package-licenses/kpty/7c203dee3a03037da436df03c4b25b659c073976
-cp %{_builddir}/kpty-5.73.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kpty/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/kpty-5.75.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kpty/e712eadfab0d2357c0f50f599ef35ee0d87534cb
+cp %{_builddir}/kpty-5.75.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kpty/20079e8f79713dce80ab09774505773c926afa2a
 pushd clr-build
 %make_install
 popd
@@ -140,12 +140,12 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Pty.so.5
-/usr/lib64/libKF5Pty.so.5.73.0
+/usr/lib64/libKF5Pty.so.5.75.0
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/kpty/7c203dee3a03037da436df03c4b25b659c073976
-/usr/share/package-licenses/kpty/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+/usr/share/package-licenses/kpty/20079e8f79713dce80ab09774505773c926afa2a
+/usr/share/package-licenses/kpty/e712eadfab0d2357c0f50f599ef35ee0d87534cb
 
 %files locales -f kpty5.lang
 %defattr(-,root,root,-)
