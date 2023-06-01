@@ -7,7 +7,7 @@
 #
 Name     : kpty
 Version  : 5.106.0
-Release  : 63
+Release  : 64
 URL      : https://download.kde.org/stable/frameworks/5.106/kpty-5.106.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.106/kpty-5.106.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.106/kpty-5.106.0.tar.xz.sig
@@ -90,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684819824
+export SOURCE_DATE_EPOCH=1685595075
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -123,7 +123,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1684819824
+export SOURCE_DATE_EPOCH=1685595075
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kpty
 cp %{_builddir}/kpty-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kpty/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
@@ -147,7 +147,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5Pty.so
 /usr/include/KF5/KPty/KPty
 /usr/include/KF5/KPty/KPtyDevice
 /usr/include/KF5/KPty/KPtyProcess
@@ -165,7 +164,6 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5Pty.so.5
 /V3/usr/lib64/libKF5Pty.so.5.106.0
 /usr/lib64/libKF5Pty.so.5
 /usr/lib64/libKF5Pty.so.5.106.0
