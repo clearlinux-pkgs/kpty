@@ -1,60 +1,24 @@
-libKF6Pty.so.6:KPtyDevice::qt_metacall(QMetaObject::Call, int, void**)
-libKF6Pty.so.6:KPtyDevice::qt_metacast(char const*)
-libKF6Pty.so.6:KPtyDevice::readLineData(char*, long long)
-libKF6Pty.so.6:KPtyDevice::setSuspended(bool)
-libKF6Pty.so.6:KPtyDevice::waitForReadyRead(int)
-libKF6Pty.so.6:KPtyDevice::waitForBytesWritten(int)
-libKF6Pty.so.6:KPtyDevice::open(QFlags<QIODeviceBase::OpenModeFlag>)
-libKF6Pty.so.6:KPtyDevice::open(int, QFlags<QIODeviceBase::OpenModeFlag>)
-libKF6Pty.so.6:KPtyDevice::close()
-libKF6Pty.so.6:KPtyDevice::readEof()
-libKF6Pty.so.6:KPtyDevice::readData(char*, long long)
-libKF6Pty.so.6:KPtyDevice::writeData(char const*, long long)
-libKF6Pty.so.6:KPtyDevice::KPtyDevice(QObject*)
-libKF6Pty.so.6:KPtyDevice::KPtyDevice(QObject*)
-libKF6Pty.so.6:KPtyDevice::~KPtyDevice()
-libKF6Pty.so.6:KPtyDevice::~KPtyDevice()
-libKF6Pty.so.6:KPtyDevice::~KPtyDevice()
-libKF6Pty.so.6:KPtyProcess::setUseUtmp(bool)
-libKF6Pty.so.6:KPtyProcess::qt_metacall(QMetaObject::Call, int, void**)
-libKF6Pty.so.6:KPtyProcess::qt_metacast(char const*)
-libKF6Pty.so.6:KPtyProcess::setPtyChannels(QFlags<KPtyProcess::PtyChannelFlag>)
-libKF6Pty.so.6:KPtyProcess::KPtyProcess(QObject*)
-libKF6Pty.so.6:KPtyProcess::KPtyProcess(int, QObject*)
-libKF6Pty.so.6:KPtyProcess::KPtyProcess(QObject*)
-libKF6Pty.so.6:KPtyProcess::KPtyProcess(int, QObject*)
-libKF6Pty.so.6:KPtyProcess::~KPtyProcess()
-libKF6Pty.so.6:KPtyProcess::~KPtyProcess()
-libKF6Pty.so.6:KPtyProcess::~KPtyProcess()
-libKF6Pty.so.6:KPty::closeSlave()
-libKF6Pty.so.6:KPty::setWinSize(int, int)
-libKF6Pty.so.6:KPty::setWinSize(int, int, int, int)
-libKF6Pty.so.6:KPty::setCTtyEnabled(bool)
-libKF6Pty.so.6:KPty::open(int)
-libKF6Pty.so.6:KPty::open()
+libKF6Pty.so.6:KPty::KPty()
 libKF6Pty.so.6:KPty::close()
-libKF6Pty.so.6:KPty::login(char const*, char const*)
+libKF6Pty.so.6:KPty::closeSlave()
 libKF6Pty.so.6:KPty::logout()
-libKF6Pty.so.6:KPty::setCTty()
-libKF6Pty.so.6:KPty::setEcho(bool)
+libKF6Pty.so.6:KPty::open()
+libKF6Pty.so.6:KPty::open(int)
 libKF6Pty.so.6:KPty::openSlave()
+libKF6Pty.so.6:KPty::setCTty()
+libKF6Pty.so.6:KPty::setCTtyEnabled(bool)
+libKF6Pty.so.6:KPty::setEcho(bool)
 libKF6Pty.so.6:KPty::tcSetAttr(termios*)
-libKF6Pty.so.6:KPty::KPty()
-libKF6Pty.so.6:KPty::KPty()
 libKF6Pty.so.6:KPty::~KPty()
-libKF6Pty.so.6:KPty::~KPty()
-libKF6Pty.so.6:KPtyDevice::metaObject() const
-libKF6Pty.so.6:KPtyDevice::canReadLine() const
-libKF6Pty.so.6:KPtyDevice::isSuspended() const
-libKF6Pty.so.6:KPtyDevice::bytesToWrite() const
-libKF6Pty.so.6:KPtyDevice::isSequential() const
-libKF6Pty.so.6:KPtyDevice::bytesAvailable() const
-libKF6Pty.so.6:KPtyDevice::atEnd() const
-libKF6Pty.so.6:KPtyProcess::metaObject() const
-libKF6Pty.so.6:KPtyProcess::ptyChannels() const
-libKF6Pty.so.6:KPtyProcess::pty() const
-libKF6Pty.so.6:KPtyProcess::isUseUtmp() const
-libKF6Pty.so.6:KPty::slaveFd() const
-libKF6Pty.so.6:KPty::ttyName() const
-libKF6Pty.so.6:KPty::masterFd() const
-libKF6Pty.so.6:KPty::tcGetAttr(termios*) const
+libKF6Pty.so.6:KPtyDevice::KPtyDevice(QObject*)
+libKF6Pty.so.6:KPtyDevice::close()
+libKF6Pty.so.6:KPtyDevice::open(QFlags<QIODeviceBase::OpenModeFlag>)
+libKF6Pty.so.6:KPtyDevice::readEof()
+libKF6Pty.so.6:KPtyDevice::setSuspended(bool)
+libKF6Pty.so.6:KPtyDevice::waitForBytesWritten(int)
+libKF6Pty.so.6:KPtyDevice::waitForReadyRead(int)
+libKF6Pty.so.6:KPtyDevice::~KPtyDevice()
+libKF6Pty.so.6:KPtyProcess::KPtyProcess(QObject*)
+libKF6Pty.so.6:KPtyProcess::setPtyChannels(QFlags<KPtyProcess::PtyChannelFlag>)
+libKF6Pty.so.6:KPtyProcess::setUseUtmp(bool)
+libKF6Pty.so.6:KPtyProcess::~KPtyProcess()
